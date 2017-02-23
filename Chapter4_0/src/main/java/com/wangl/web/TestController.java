@@ -2,6 +2,7 @@ package com.wangl.web;
 
 import com.wangl.conf.MailConfig;
 import com.wangl.modle.ServerObj;
+import com.wangl.server.TestServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController {
 
+//    @Autowired
+//    public TestServer testServer;
+
     @Autowired
     public ServerObj serverObj;
 
@@ -22,6 +26,11 @@ public class TestController {
 
     @RequestMapping("/mail")
     public String getMailConfig() {
+
+        TestServer testServer = new TestServer(mailConfig);
+
+        testServer.testMail();
+
         return mailConfig.toString();
     }
 

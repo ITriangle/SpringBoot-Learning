@@ -14,7 +14,7 @@ public class MailConfig {
 
 
     @Value("${mail.protocol}")
-    private String protocol;
+    public String protocol;
 
     @Value("${mail.host}")
     private String host;
@@ -23,6 +23,17 @@ public class MailConfig {
     private int port;
 
 
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public int getPort() {
+        return port;
+    }
 
     @Override
     public String toString() {

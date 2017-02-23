@@ -1,5 +1,6 @@
 package com.wangl;
 
+import com.wangl.conf.ApplicationConf;
 import com.wangl.conf.MailConfig;
 import com.wangl.modle.ServerObj;
 import org.junit.Test;
@@ -33,6 +34,11 @@ public class ApplicationTests {
 	@Test
 	public void test2(){
 		System.out.println(mailConfig.toString());
+	}
+
+	@Test
+	public void test3(){
+		System.out.println("ApplicationConf.host :" + ApplicationConf.host);
 	}
 
 }
