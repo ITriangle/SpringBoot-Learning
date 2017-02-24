@@ -2,6 +2,7 @@ package com.wangl;
 
 import com.wangl.conf.ApplicationConf;
 import com.wangl.conf.MailConfig;
+import com.wangl.ioc.BeanClass;
 import com.wangl.modle.ServerObj;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,6 +40,13 @@ public class ApplicationTests {
 	@Test
 	public void test3(){
 		System.out.println("ApplicationConf.host :" + ApplicationConf.host);
+	}
+
+	@Autowired
+	private BeanClass beanClass;
+	@Test
+	public void test4(){
+		System.out.println("实例化调用的方式: " + beanClass.toString());
 	}
 
 }
